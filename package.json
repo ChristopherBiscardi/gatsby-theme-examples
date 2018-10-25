@@ -1,0 +1,12 @@
+{
+  "name": "gatsby-theme-examples",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "christopherbiscardi <chris@christopherbiscardi.com> (@chrisbiscardi)",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "themes/*",
+    "ui-surfaces/*"
+  ]
+}
