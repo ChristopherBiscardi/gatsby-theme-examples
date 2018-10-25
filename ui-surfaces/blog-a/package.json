@@ -1,0 +1,14 @@
+{
+  "name": "blog-a",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "christopherbiscardi <chris@christopherbiscardi.com> (@chrisbiscardi)",
+  "license": "MIT",
+  "scripts": {
+    "develop": "gatsby develop"
+  },
+  "dependencies": {
+    "gatsby": "^2.0.19",
+    "gatsby-theme-blog": "*"
+  }
+}
