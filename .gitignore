@@ -1,2 +1,5 @@
 public/
 .cache/
+/node_modules
+/ui-surfaces/blog-b-minimal/node_modules
+/ui-surfaces/blog-a/node_modules
