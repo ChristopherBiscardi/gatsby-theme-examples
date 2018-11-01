@@ -70,5 +70,11 @@ module.exports = ({ root }) => ({
         ),
       },
     },
+    {
+      resolve: `gatsby-plugin-page-creator`,
+      options: {
+        path: require.resolve(`./src/pages`),
+      },
+    },
   ],
 })
