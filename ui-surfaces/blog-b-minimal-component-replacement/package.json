@@ -1,0 +1,15 @@
+{
+  "name": "blog-b-minimal-component-replacement",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "christopherbiscardi <chris@christopherbiscardi.com> (@chrisbiscardi)",
+  "license": "MIT",
+  "scripts": {
+    "develop": "gatsby develop",
+    "build": "gatsby build"
+  },
+  "dependencies": {
+    "gatsby": "^2.0.19",
+    "gatsby-theme-blog": "*"
+  }
+}
