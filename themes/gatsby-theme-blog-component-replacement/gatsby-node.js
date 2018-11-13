@@ -75,7 +75,9 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
 // themePrefix is a machine generated name that uniquely identifies the theme for import paths
 const themePrefix = 'gatsby-theme-blog-component-replacement--components'
-exports.onCreateWebpackConfig = ({ actions }) => {
+exports.onCreateWebpackConfig = ({ actions, store }) => {
+  const { __experimentalThemes } = store.getState().config
+  console.log(__experimentalThemes)
   const userComponents = fs
     .readdirSync(path.resolve(`./src/components/${themePrefix}`))
     .reduce(
