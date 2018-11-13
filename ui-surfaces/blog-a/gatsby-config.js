@@ -1,3 +1,5 @@
 module.exports = {
-  __experimentalThemes: [["gatsby-theme-blog", { root: __dirname }]]
+  __experimentalThemes: [
+    { resolve: "gatsby-theme-blog", options: { root: __dirname } }
+  ]
 };
