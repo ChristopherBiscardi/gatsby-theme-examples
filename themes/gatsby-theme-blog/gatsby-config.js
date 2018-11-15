@@ -1,4 +1,5 @@
 const path = require('path')
+const withThemePath = require('./with-theme-path')
 
 module.exports = ({ root }) => ({
   siteMetadata: {
@@ -64,10 +65,7 @@ module.exports = ({ root }) => ({
     {
       resolve: 'gatsby-plugin-typography',
       options: {
-        pathToConfigModule: path.relative(
-          root,
-          require.resolve('./src/utils/typography')
-        ),
+        pathToConfigModule: withThemePath('./src/utils/typography'),
       },
     },
     {
