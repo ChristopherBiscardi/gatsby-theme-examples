@@ -3,12 +3,12 @@ const Debug = require('debug')
 const debugTheme = Debug('withThemePath')
 
 module.exports = relativePath => {
-  debugTheme('stuff', relativePath)
+  debugTheme('resolving', relativePath)
   let pathResolvedPath = path.resolve(relativePath)
-  debugTheme(pathResolvedPath)
   let finalPath = pathResolvedPath
 
   try {
+    debugTheme('checking', pathResolvedPath)
     // check if the user's site has the file
     require.resolve(pathResolvedPath)
     finalPath = pathResolvedPath
