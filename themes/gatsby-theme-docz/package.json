@@ -1,6 +1,6 @@
 {
-  "name": "gatsby-docz",
-  "version": "1.0.0",
+  "name": "gatsby-theme-docz",
+  "version": "0.0.1",
   "main": "index.js",
   "author": "christopherbiscardi <chris@christopherbiscardi.com> (@chrisbiscardi)",
   "license": "MIT"
