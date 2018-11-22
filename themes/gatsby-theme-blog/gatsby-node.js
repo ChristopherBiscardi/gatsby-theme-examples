@@ -108,6 +108,6 @@ exports.onPreBootstrap = ({ store }) => {
 
   if (!fs.existsSync(dir)) {
     debug(`creating ${dir}`)
-    fs.mkdirSync(dir)
+    fs.mkdirSync(dir, { recursive: true })
   }
 }
