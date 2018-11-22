@@ -2,6 +2,7 @@ const _ = require('lodash')
 const Promise = require('bluebird')
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
+const fs = require('fs')
 const withThemePath = require('./with-theme-path')
 
 exports.createPages = ({ graphql, actions }) => {
@@ -91,4 +92,14 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
       ],
     },
   })
+}
+
+// make sure src/pages exists for the filesystem source or it will error
+exports.onPreBootstrap = ({ store }) => {
+  const { program } = store.getState()
+  const dir = `${program.directory}/src/pages`
+
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir)
+  }
 }
