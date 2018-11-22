@@ -4,8 +4,10 @@ const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 const fs = require('fs')
 const withThemePath = require('./with-theme-path')
+const Debug = require('Debug')
 
 exports.createPages = ({ graphql, actions }) => {
+  const debug = Debug('gatsby-theme-blog:createPages')
   const { createPage } = actions
   const blogPost = withThemePath('./src/templates/blog-post.js')
 
@@ -45,6 +47,7 @@ exports.createPages = ({ graphql, actions }) => {
             index === posts.length - 1 ? null : posts[index + 1].node
           const next = index === 0 ? null : posts[index - 1].node
 
+          debug('creating', post.node.fields.slug)
           createPage({
             path: post.node.fields.slug,
             component: blogPost,
@@ -81,6 +84,8 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
  * theme, this is how we let webpack know how to process files.
  */
 exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
+  const debug = Debug('gatsby-theme-blog:onCreateWebpackConfig')
+  debug('ensuring Webpack will compile theme code')
   actions.setWebpackConfig({
     module: {
       rules: [
@@ -96,10 +101,13 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
 
 // make sure src/pages exists for the filesystem source or it will error
 exports.onPreBootstrap = ({ store }) => {
+  const debug = Debug('gatsby-theme-blog:onPreBoostrap')
   const { program } = store.getState()
   const dir = `${program.directory}/src/pages`
+  debug(`ensuring ${dir} exists`)
 
   if (!fs.existsSync(dir)) {
+    debug(`creating ${dir}`)
     fs.mkdirSync(dir)
   }
 }
