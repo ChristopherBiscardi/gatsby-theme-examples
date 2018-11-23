@@ -3,6 +3,7 @@ const Promise = require('bluebird')
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 const fs = require('fs')
+const mkdirp = require('mkdirp')
 const withThemePath = require('./with-theme-path')
 const Debug = require('Debug')
 
@@ -108,6 +109,6 @@ exports.onPreBootstrap = ({ store }) => {
 
   if (!fs.existsSync(dir)) {
     debug(`creating ${dir}`)
-    fs.mkdirSync(dir, { recursive: true })
+    mkdirp.sync(dir)
   }
 }
