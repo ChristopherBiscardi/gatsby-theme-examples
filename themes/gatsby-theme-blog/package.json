@@ -1,7 +1,7 @@
 {
   "name": "gatsby-theme-blog",
   "description": "Gatsby Blog Theme",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "author": "Chris Biscardi <chris@christopherbiscardi.com>",
   "bugs": {
     "url": "https://github.com/christopherbiscardi/gatsby-theme-examples/issues"
