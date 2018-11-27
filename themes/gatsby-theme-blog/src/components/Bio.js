@@ -11,7 +11,7 @@ class Bio extends React.Component {
   render() {
     return (
       <div
-        style={{
+        css={{
           display: 'flex',
           marginBottom: rhythm(2.5),
         }}
@@ -19,7 +19,7 @@ class Bio extends React.Component {
         <img
           src={profilePic}
           alt={`Kyle Mathews`}
-          style={{
+          css={{
             marginRight: rhythm(1 / 2),
             marginBottom: 0,
             width: rhythm(2),

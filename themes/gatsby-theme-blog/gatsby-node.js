@@ -84,8 +84,15 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
  * we never need a lib-side build step.  Since we dont pre-compile the
  * theme, this is how we let webpack know how to process files.
  */
-exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
+exports.onCreateWebpackConfig = ({ stage, loaders, plugins, actions }) => {
   const debug = Debug('gatsby-theme-blog:onCreateWebpackConfig')
+  actions.setWebpackConfig({
+    plugins: [
+      plugins.provide({
+        Emotion: require.resolve('@emotion/core'),
+      }),
+    ],
+  })
   debug('ensuring Webpack will compile theme code')
   actions.setWebpackConfig({
     module: {
@@ -111,4 +118,19 @@ exports.onPreBootstrap = ({ store }) => {
     debug(`creating ${dir}`)
     mkdirp.sync(dir)
   }
+}
+
+exports.onCreateBabelConfig = ({ actions }) => {
+  actions.setBabelPreset({
+    name: '@babel/preset-react',
+    options: { pragma: 'Emotion.jsx' },
+  })
+  actions.setBabelPlugin({
+    name: require.resolve(`babel-plugin-emotion`),
+    options: {
+      sourceMap: process.env.NODE_ENV !== `production`,
+      autoLabel: process.env.NODE_ENV !== `production`,
+      hoist: process.env.NODE_ENV === `production`,
+    },
+  })
 }

@@ -8,6 +8,8 @@
   },
   "dependencies": {
     "debug": "^4.1.0",
+    "@emotion/core": "^10.0.0-beta.13",
+    "babel-plugin-emotion": "^10.0.0-beta.13",
     "gatsby": "^2.0.19",
     "gatsby-plugin-feed": "^2.0.8",
     "gatsby-plugin-google-analytics": "^2.0.5",
@@ -35,6 +37,9 @@
     "typeface-montserrat": "0.0.43",
     "typography": "^0.16.17",
     "typography-theme-wordpress-2016": "^0.15.10"
+  },
+  "peerDependencies": {
+    "@babel/preset-react": "*"
   },
   "devDependencies": {
     "eslint": "^4.19.1",

@@ -56,7 +56,7 @@ module.exports = ({ root }) => ({
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/assets/gatsby-icon.png`,
+        icon: path.resolve(`src/assets/gatsby-icon.png`),
       },
     },
     `gatsby-plugin-offline`,

@@ -1,6 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import { Link,graphql } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
 
 import Bio from '../components/Bio'
@@ -23,7 +23,7 @@ class BlogPostTemplate extends React.Component {
         />
         <h1>{post.frontmatter.title}</h1>
         <p
-          style={{
+          css={{
             ...scale(-1 / 5),
             display: 'block',
             marginBottom: rhythm(1),
@@ -34,14 +34,14 @@ class BlogPostTemplate extends React.Component {
         </p>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr
-          style={{
+          css={{
             marginBottom: rhythm(1),
           }}
         />
         <Bio />
 
         <ul
-          style={{
+          css={{
             display: 'flex',
             flexWrap: 'wrap',
             justifyContent: 'space-between',
@@ -50,20 +50,18 @@ class BlogPostTemplate extends React.Component {
           }}
         >
           <li>
-            {
-              previous &&
+            {previous && (
               <Link to={previous.fields.slug} rel="prev">
                 ← {previous.frontmatter.title}
               </Link>
-            }
+            )}
           </li>
           <li>
-            {
-              next &&
+            {next && (
               <Link to={next.fields.slug} rel="next">
                 {next.frontmatter.title} →
               </Link>
-            }
+            )}
           </li>
         </ul>
       </Layout>
