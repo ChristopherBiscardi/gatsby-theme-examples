@@ -1,9 +1,9 @@
 import React from "react";
 import Helmet from "react-helmet";
-import { Link, graphql } from "gatsby";
+import { Link } from "gatsby";
 import get from "lodash/get";
 
-import Bio from "gatsby-theme-blog/src/components/Bio";
+import Bio from "./Bio";
 import Layout from "gatsby-theme-blog/src/components/layout";
 import { rhythm, scale } from "gatsby-theme-blog/src/utils/typography";
 
@@ -21,9 +21,9 @@ class BlogPostTemplate extends React.Component {
           meta={[{ name: "description", content: siteDescription }]}
           title={`${post.frontmatter.title} | ${siteTitle}`}
         />
-        <h1>{post.frontmatter.title}</h1>
+        <h1>site layout: {post.frontmatter.title}</h1>
         <p
-          style={{
+          css={{
             ...scale(-1 / 5),
             display: "block",
             marginBottom: rhythm(1),
@@ -32,17 +32,16 @@ class BlogPostTemplate extends React.Component {
         >
           {post.frontmatter.date}
         </p>
-        <p>[Overridden by site]</p>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr
-          style={{
+          css={{
             marginBottom: rhythm(1)
           }}
         />
         <Bio />
 
         <ul
-          style={{
+          css={{
             display: "flex",
             flexWrap: "wrap",
             justifyContent: "space-between",
@@ -71,23 +70,3 @@ class BlogPostTemplate extends React.Component {
 }
 
 export default BlogPostTemplate;
-
-export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
-    site {
-      siteMetadata {
-        title
-        author
-      }
-    }
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      id
-      excerpt
-      html
-      frontmatter {
-        title
-        date(formatString: "MMMM DD, YYYY")
-      }
-    }
-  }
-`;

@@ -4,13 +4,12 @@ const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 const fs = require('fs')
 const mkdirp = require('mkdirp')
-const withThemePath = require('./with-theme-path')
 const Debug = require('Debug')
 
 exports.createPages = ({ graphql, actions }) => {
   const debug = Debug('gatsby-theme-blog:createPages')
   const { createPage } = actions
-  const blogPost = withThemePath('./src/templates/blog-post.js')
+  const blogPost = require.resolve('./src/templates/blog-post.js')
 
   return new Promise((resolve, reject) => {
     resolve(
