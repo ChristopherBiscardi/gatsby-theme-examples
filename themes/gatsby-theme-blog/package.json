@@ -27,6 +27,7 @@
     "gatsby-source-filesystem": "^2.0.10",
     "gatsby-transformer-remark": "^2.1.14",
     "gatsby-transformer-sharp": "^2.1.9",
+    "gatsby-theme-blog-core": "*",
     "lodash": "^4.17.11",
     "mkdirp": "^0.5.1",
     "prismjs": "^1.15.0",
