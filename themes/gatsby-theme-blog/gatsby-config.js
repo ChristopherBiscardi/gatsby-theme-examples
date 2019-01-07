@@ -10,6 +10,13 @@ module.exports = ({ root }) => ({
   },
   plugins: [
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: path.resolve(`./src/assets`),
+        name: 'pages',
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Gatsby Starter Blog`,
