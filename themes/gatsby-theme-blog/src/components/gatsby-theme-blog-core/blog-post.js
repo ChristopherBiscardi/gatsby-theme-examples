@@ -3,9 +3,9 @@ import Helmet from 'react-helmet'
 import { Link } from 'gatsby'
 import get from 'lodash/get'
 
-import Bio from './Bio'
-import Layout from './layout'
-import { rhythm, scale } from '../utils/typography'
+import Bio from 'gatsby-theme-blog/src/components/Bio'
+import Layout from 'gatsby-theme-blog/src/components/layout'
+import { rhythm, scale } from 'gatsby-theme-blog/src/utils/typography'
 
 class BlogPostTemplate extends React.Component {
   render() {
