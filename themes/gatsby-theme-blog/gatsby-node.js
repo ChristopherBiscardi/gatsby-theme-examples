@@ -4,7 +4,7 @@ const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 const fs = require('fs')
 const mkdirp = require('mkdirp')
-const Debug = require('Debug')
+const Debug = require('debug')
 
 exports.createPages = ({ graphql, actions }) => {
   const debug = Debug('gatsby-theme-blog:createPages')
