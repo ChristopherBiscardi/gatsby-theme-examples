@@ -1,8 +1,7 @@
-import React from 'react'
-import { graphql } from 'gatsby'
-import BlogPostTemplate from '../components/blog-post'
+import { graphql } from "gatsby";
+import BlogPostTemplate from "../components/blog-post";
 
-export default BlogPostTemplate
+export default BlogPostTemplate;
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
@@ -22,4 +21,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

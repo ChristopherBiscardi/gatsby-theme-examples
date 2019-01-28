@@ -1,33 +1,33 @@
-import React from "react";
-import Helmet from "react-helmet";
-import { Link } from "gatsby";
-import get from "lodash/get";
+import React from 'react'
+import Helmet from 'react-helmet'
+import { Link } from 'gatsby'
+import get from 'lodash/get'
 
-import Bio from "./Bio";
-import Layout from "gatsby-theme-blog/src/components/layout";
-import { rhythm, scale } from "gatsby-theme-blog/src/utils/typography";
+import Bio from 'gatsby-theme-blog/src/components/Bio'
+import Layout from 'gatsby-theme-blog/src/components/layout'
+import { rhythm, scale } from 'gatsby-theme-blog/src/utils/typography'
 
 class BlogPostTemplate extends React.Component {
   render() {
-    const post = this.props.data.markdownRemark;
-    const siteTitle = get(this.props, "data.site.siteMetadata.title");
-    const siteDescription = post.excerpt;
-    const { previous, next } = this.props.pageContext;
+    const post = this.props.data.markdownRemark
+    const siteTitle = get(this.props, 'data.site.siteMetadata.title')
+    const siteDescription = post.excerpt
+    const { previous, next } = this.props.pageContext
 
     return (
       <Layout location={this.props.location}>
         <Helmet
-          htmlAttributes={{ lang: "en" }}
-          meta={[{ name: "description", content: siteDescription }]}
+          htmlAttributes={{ lang: 'en' }}
+          meta={[{ name: 'description', content: siteDescription }]}
           title={`${post.frontmatter.title} | ${siteTitle}`}
         />
-        <h1>site layout: {post.frontmatter.title}</h1>
+        <h1>{post.frontmatter.title}</h1>
         <p
           css={{
             ...scale(-1 / 5),
-            display: "block",
+            display: 'block',
             marginBottom: rhythm(1),
-            marginTop: rhythm(-1)
+            marginTop: rhythm(-1),
           }}
         >
           {post.frontmatter.date}
@@ -35,18 +35,18 @@ class BlogPostTemplate extends React.Component {
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr
           css={{
-            marginBottom: rhythm(1)
+            marginBottom: rhythm(1),
           }}
         />
         <Bio />
 
         <ul
           css={{
-            display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "space-between",
-            listStyle: "none",
-            padding: 0
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'space-between',
+            listStyle: 'none',
+            padding: 0,
           }}
         >
           <li>
@@ -65,8 +65,8 @@ class BlogPostTemplate extends React.Component {
           </li>
         </ul>
       </Layout>
-    );
+    )
   }
 }
 
-export default BlogPostTemplate;
+export default BlogPostTemplate
