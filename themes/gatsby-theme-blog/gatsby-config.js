@@ -3,7 +3,7 @@ const path = require('path')
 module.exports = ({ root }) => ({
   __experimentalThemes: [`gatsby-theme-blog-core`],
   siteMetadata: {
-    title: 'Gatsby Starter Blog',
+    title: 'Gatsby Theme Blog',
     author: 'Kyle Mathews',
     description: 'A starter blog demonstrating what Gatsby can do.',
     siteUrl: 'https://gatsbyjs.github.io/gatsby-starter-blog/',
@@ -19,7 +19,7 @@ module.exports = ({ root }) => ({
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
+        name: `Gatsby Theme Blog`,
         short_name: `GatsbyJS`,
         start_url: `/`,
         background_color: `#ffffff`,

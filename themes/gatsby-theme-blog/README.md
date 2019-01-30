@@ -1,9 +1,14 @@
-# gatsby-starter-blog
-Gatsby starter for creating a blog
+# gatsby-theme-blog
 
-Install this starter (assuming Gatsby is installed) by running from your CLI:
+Gatsby theme for creating a blog
 
-`gatsby new gatsby-blog https://github.com/gatsbyjs/gatsby-starter-blog`
+```shell
+yarn add gatsby-theme-blog
+```
 
-## Running in development
-`gatsby develop`
+```js
+// gatsby-config.js
+module.exports = {
+  __experimentalThemes = [`gatsby-theme-blog`]
+}
+```
