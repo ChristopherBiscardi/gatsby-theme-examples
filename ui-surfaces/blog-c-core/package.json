@@ -9,7 +9,7 @@
     "build": "gatsby build"
   },
   "dependencies": {
-    "gatsby": "^2.0.59",
+    "gatsby": "^2.0.111",
     "gatsby-theme-blog-core": "*"
   }
 }
