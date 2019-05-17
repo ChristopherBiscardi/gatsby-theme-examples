@@ -9,6 +9,6 @@ yarn add gatsby-theme-blog
 ```js
 // gatsby-config.js
 module.exports = {
-  __experimentalThemes = [`gatsby-theme-blog`]
+  __experimentalThemes: [`gatsby-theme-blog`]
 }
 ```
