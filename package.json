@@ -6,8 +6,6 @@
   "license": "MIT",
   "private": true,
   "workspaces": [
-    "themes/*",
-    "ui-surfaces/*",
-    "vendored-gatsby/packages/gatsby"
+    "examples/*"
   ]
 }
